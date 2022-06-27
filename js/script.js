@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('.senior-link').click(function () {
         name = $(this).text().toLowerCase()
-        $.getJSON('https://raw.githubusercontent.com/borahabhigyan/ourbatch/branch1/img/seniors/' + name + '/senior.json', function (senior) {
+        $.getJSON('https://raw.githubusercontent.com/ctetezpurtrainees/farewell/main/img/seniors/' + name + '/senior.json', function (senior) {
             document.title = 'Farewell to ' + senior.name;
             document.querySelectorAll(".name").forEach(name => {
                 name.innerHTML = senior.name;
