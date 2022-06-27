@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Trackmate</title>
+		<link rel="stylesheet" href="https://unpkg.com/nes.css@latest/css/nes.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+		<link rel="stylesheet" href="sweetalert2.min.css">
+	</head>
+	<style>
+		a {
+    color: #0060B6;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none !important; 
+    cursor:pointer;  
+}
+.p2{
+	font-size: 20px;
+		}
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+section.message-list {
+  display: flex;
+  flex-direction: column;
+}
+.message-list > .message {
+  display: flex;
+  margin-top: 2rem;
+}
+.message-list > .message > .nes-balloon {
+  max-width: 525px;
+}
+.message-list > .message i {
+  align-self: flex-end;
+}
+.message-list > .message.-left {
+  align-self: auto;
+}
+.message-list > .message.-right {
+  align-self: auto;
+}
+.message-list > .message.-left i {
+  margin-right: 2rem;
+}
+.message-list > .message.-right i {
+  margin-left: 2rem;
+}
+
+.icon-list > .blur-filter {
+  filter: blur(10px);
+}
+    </style>
+  <body>
+<div v-scope="{ sent: false, processing: false }" class="container">
+  <div class="nes-container">
+    <h1>Trackmate<br> </h1><h4>CTE Tezpur 2021-23</h4>
+	  <h5><a href="/index.html">homepage</a></h5>
+
+    <section v-if="sent" class="message-list" hidden @mounted="$el.hidden = false">
+      <section class="message -left">
+        <i class="nes-bcrikko"></i>
+        <!-- Balloon -->
+        <div class="nes-balloon from-left">
+          <p>Okay! Glad to know that.</p>
+          <p>Wait. You missed somebody?</p>
+          <button type="button" class="nes-btn is-primary" @click="sent=false">Search for more details.</button>
+
+        </div>
+      </section>
+
+    </section>
+
+    <div v-else>
+      <section class="message-list">
+        <section class="message -left">
+          <i class="nes-bcrikko"></i>
+          <!-- Balloon -->
+          <div class="nes-balloon from-left">
+            <p>Want to be updated about our batchmates? <br>
+		    Click on their names.</p>
+
+          </div>
+        </section>
+
+      </section>
+
+      <br>
+
+      <form>
+        <div>
+          <details>
+  <summary>Abhigyan</summary>
+  <p>Details will be updated shortly.</p>
+</details>
+		
+		<details>
+  <summary>Manashee</summary>
+  <p>Details will be updated shortly.</p>
+</details>
+		<h3>Are you updated now?</h3>
+		<br/>
+          <button type="button" class="nes-btn is-primary" @click.prevent="sent = true">Yes, I am updated.</button>
+		<br><br><h6> IRC Channel:<br>(September 1, every year, 5-6 PM IST; just adding to make this page nerdy)<br>
+		You can change your Nick and use your name.<br>
+		DO NOT CHANGE THE CHANNEL NAME i.e. #nameoftheirc<br>
+		no password required.
+		<iframe src="https://web.libera.chat/#nameoftheirc" style="border:0; width:100%; height:450px;"></iframe>
+		</h6></div>
+      </form>
+    </div>
+  </div>
+</div>
+	   <h6><details>
+  <summary>Click here (and scroll) for more info:</summary>
+Details last updated on:<br>23-08-2021<br><a href="https://codepen.io/davatron5000/pen/ZEKNNZx" target="_blank" rel="noopener noreferrer">Code Credit</a>
+	  </details></h6>
+	  </div>
+	</body>
+	<script src="https://unpkg.com/petite-vue"></script>
+<script>
+  PetiteVue.createApp().mount()
+</script>
+</html>
